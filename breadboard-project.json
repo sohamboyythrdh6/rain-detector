@@ -1,0 +1,194 @@
+{
+  "format": "velxio-project",
+  "version": 1,
+  "boards": [
+    {
+      "id": "arduino-uno",
+      "boardKind": "arduino-uno",
+      "x": 261.44613371373384,
+      "y": 109.64985389549679,
+      "activeFileGroupId": "group-arduino-uno",
+      "languageMode": "arduino",
+      "serialBaudRate": 0
+    }
+  ],
+  "fileGroups": {
+    "group-arduino-uno": [
+      {
+        "name": "sketch.ino",
+        "content": "#include <Servo.h>\n\nServo myServo;\n\nconst int sensorPin = A0;   // Water sensor analog output\nconst int buzzerPin = 8;    // Buzzer\nconst int threshold = 300;  // Adjust based on your sensor\n\nvoid setup() {\n  pinMode(buzzerPin, OUTPUT);\n\n  myServo.attach(9);\n  myServo.write(0);         // Servo starts at 0°\n\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int sensorValue = analogRead(sensorPin);\n\n  Serial.print(\"Sensor Value: \");\n  Serial.println(sensorValue);\n\n  if (sensorValue > threshold) {\n    digitalWrite(buzzerPin, HIGH);\n    myServo.write(90);      // Rotate servo to 90°\n  } else {\n    digitalWrite(buzzerPin, LOW);\n    myServo.write(0);       // Return servo to 0°\n  }\n\n  delay(100);\n}"
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "servo_1783529188682_xljjq9x1o",
+      "metadataId": "servo",
+      "x": 41.16617619774287,
+      "y": -104.50621540239445,
+      "properties": {
+        "angle": 0,
+        "horn": "single",
+        "hornColor": "#ccc"
+      }
+    },
+    {
+      "id": "water_level_sensor_1783529234581_3rfbr4hc2",
+      "metadataId": "water-level-sensor",
+      "x": -93.57177913300342,
+      "y": -133.05876145674975,
+      "properties": {
+        "level": 100
+      }
+    },
+    {
+      "id": "buzzer_passive_1783529485203_w8dsew8kk",
+      "metadataId": "buzzer-passive",
+      "x": -143.90589701136497,
+      "y": 189.90958044013064,
+      "properties": {
+        "active": false
+      }
+    }
+  ],
+  "wires": [
+    {
+      "waypoints": [],
+      "id": "wire-1783529561598",
+      "start": {
+        "componentId": "servo_1783529188682_xljjq9x1o",
+        "pinName": "GND",
+        "x": 47.16617619774287,
+        "y": -48.506215402394446
+      },
+      "end": {
+        "componentId": "arduino-uno",
+        "pinName": "GND.1",
+        "x": 376.94613371373384,
+        "y": 118.64985389549679
+      },
+      "color": "#000000"
+    },
+    {
+      "waypoints": [],
+      "id": "wire-1783529577991",
+      "start": {
+        "componentId": "servo_1783529188682_xljjq9x1o",
+        "pinName": "V+",
+        "x": 47.16617619774287,
+        "y": -39.006215402394446
+      },
+      "end": {
+        "componentId": "arduino-uno",
+        "pinName": "5V",
+        "x": 421.44613371373384,
+        "y": 301.1498538954968
+      },
+      "color": "#cc0000"
+    },
+    {
+      "waypoints": [],
+      "id": "wire-1783529765590",
+      "start": {
+        "componentId": "servo_1783529188682_xljjq9x1o",
+        "pinName": "PWM",
+        "x": 47.16617619774287,
+        "y": -29.506215402394446
+      },
+      "end": {
+        "componentId": "arduino-uno",
+        "pinName": "9",
+        "x": 424.44613371373384,
+        "y": 118.64985389549679
+      },
+      "color": "#22c55e"
+    },
+    {
+      "waypoints": [],
+      "id": "wire-1783529787719",
+      "start": {
+        "componentId": "arduino-uno",
+        "pinName": "GND.3",
+        "x": 440.44613371373384,
+        "y": 301.1498538954968
+      },
+      "end": {
+        "componentId": "water_level_sensor_1783529234581_3rfbr4hc2",
+        "pinName": "-",
+        "x": -19.571779133003417,
+        "y": -47.05876145674975
+      },
+      "color": "#000000"
+    },
+    {
+      "waypoints": [],
+      "id": "wire-1783529801742",
+      "start": {
+        "componentId": "arduino-uno",
+        "pinName": "A0",
+        "x": 469.44613371373384,
+        "y": 301.1498538954968
+      },
+      "end": {
+        "componentId": "water_level_sensor_1783529234581_3rfbr4hc2",
+        "pinName": "S",
+        "x": -44.57177913300342,
+        "y": -47.05876145674975
+      },
+      "color": "#22c55e"
+    },
+    {
+      "waypoints": [],
+      "id": "wire-1783529814624",
+      "start": {
+        "componentId": "water_level_sensor_1783529234581_3rfbr4hc2",
+        "pinName": "+",
+        "x": -69.57177913300342,
+        "y": -47.05876145674975
+      },
+      "end": {
+        "componentId": "arduino-uno",
+        "pinName": "5V",
+        "x": 421.44613371373384,
+        "y": 301.1498538954968
+      },
+      "color": "#cc0000"
+    },
+    {
+      "waypoints": [],
+      "id": "wire-1783529832365",
+      "start": {
+        "componentId": "buzzer_passive_1783529485203_w8dsew8kk",
+        "pinName": "-",
+        "x": -83.90589701136497,
+        "y": 253.90958044013064
+      },
+      "end": {
+        "componentId": "arduino-uno",
+        "pinName": "GND.3",
+        "x": 440.44613371373384,
+        "y": 301.1498538954968
+      },
+      "color": "#000000"
+    },
+    {
+      "waypoints": [],
+      "id": "wire-1783529845369",
+      "start": {
+        "componentId": "buzzer_passive_1783529485203_w8dsew8kk",
+        "pinName": "+",
+        "x": -123.90589701136497,
+        "y": 253.90958044013064
+      },
+      "end": {
+        "componentId": "arduino-uno",
+        "pinName": "8",
+        "x": 434.44613371373384,
+        "y": 118.64985389549679
+      },
+      "color": "#cc0000"
+    }
+  ],
+  "activeBoardId": "arduino-uno",
+  "ignoreStock": false
+}
