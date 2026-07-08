@@ -65,6 +65,12 @@ A simple Arduino project that detects rain using a water level sensor. When rain
    - The buzzer turns OFF.
    - The servo returns to 0°.
 
+## What It Does
+
+This project continuously monitors a water level sensor to detect raindrops. When rain is detected, the Arduino immediately triggers an active buzzer to provide an audible alert and rotates a servo motor to 90°. Once the sensor is dry again, the buzzer turns off and the servo returns to its original 0° position.
+
+This project demonstrates basic sensor monitoring, servo motor control, and event-based automation using an Arduino.
+
 ## Upload
 
 1. Open the Arduino IDE.
