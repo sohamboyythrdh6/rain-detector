@@ -60,6 +60,32 @@ A simple Arduino project that detects rain using a water level sensor. When rain
 | + | D8 |
 | - | GND |
 
+## Firmware
+
+The firmware is written in **Arduino (C++)** and runs on an Arduino Uno or Nano.
+
+### Functionality
+
+- Continuously reads the water level sensor.
+- Detects rain based on a configurable threshold.
+- Activates the buzzer when rain is detected.
+- Rotates the servo motor to **90°** during rain.
+- Returns the servo to **0°** and turns the buzzer off when the sensor is dry.
+- Outputs sensor readings to the Serial Monitor for debugging and threshold calibration.
+
+### Requirements
+
+- Arduino IDE
+- Built-in `Servo` library
+
+### Uploading the Firmware
+
+1. Open `rain_detector.ino` in the Arduino IDE.
+2. Select your Arduino board and COM port.
+3. Click **Upload**.
+4. Open the **Serial Monitor** (9600 baud) to view sensor readings and adjust the threshold if needed.
+```
+
 ## How to Use It
 
 1. Assemble the circuit according to the wiring diagram.
