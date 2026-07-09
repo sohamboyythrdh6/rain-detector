@@ -24,6 +24,22 @@ A simple Arduino-based rain detection system that uses a water level sensor to d
 
 ---
 
+## ⚙️ How It Works
+
+1. The Arduino continuously reads the analog value from the water level sensor.
+2. When raindrops fall on the sensor, its output value increases.
+3. The Arduino compares the sensor reading to a predefined threshold.
+4. If the reading exceeds the threshold:
+   - The Arduino activates the active buzzer to sound an alarm.
+   - The SG90 servo motor rotates from **0°** to **90°**.
+5. If the reading falls below the threshold (the sensor is dry):
+   - The buzzer turns off.
+   - The servo returns to **0°**.
+6. The current sensor value is also sent to the **Serial Monitor** for debugging and sensitivity adjustment.
+
+This simple control logic allows the system to automatically respond whenever rain is detected.
+```
+
 ## 📖 What It Does
 
 This project continuously monitors a water level sensor for the presence of water or raindrops. The Arduino reads the sensor value and compares it against a predefined threshold.
