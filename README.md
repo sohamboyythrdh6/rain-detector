@@ -25,7 +25,7 @@ A simple Arduino project that detects rain using a water level sensor. When rain
 - 📊 Displays sensor values in the Serial Monitor
 
 #
-## Bill of Materials (BOM)
+## Bill of Materials 
 
 | Component | Quantity | Purpose |
 |-----------|:--------:|---------|
