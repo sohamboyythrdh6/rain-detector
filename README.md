@@ -55,6 +55,24 @@ A simple Arduino project that detects rain using a water level sensor. When rain
 | + | D8 |
 | - | GND |
 
+## How to Use It
+
+1. Assemble the circuit according to the wiring diagram.
+2. Connect the Arduino to your computer using a USB cable.
+3. Open the project in the Arduino IDE.
+4. Select the correct **Board** and **COM Port**.
+5. Upload the code to the Arduino.
+6. Place the water level sensor where it can detect raindrops.
+7. Power the Arduino.
+8. When rain falls on the sensor:
+   - The buzzer will sound.
+   - The servo motor will rotate to **90°**.
+9. Once the sensor dries:
+   - The buzzer will stop.
+   - The servo will return to **0°**.
+10. If needed, adjust the sensor threshold in the code to change the detection sensitivity.
+
+
 ## How It Works
 
 1. The Arduino continuously reads the water level sensor.
