@@ -24,14 +24,19 @@ A simple Arduino project that detects rain using a water level sensor. When rain
 - 🔙 Returns the servo to 0° when the sensor is dry
 - 📊 Displays sensor values in the Serial Monitor
 
-## Components
+#
+## Bill of Materials (BOM)
 
-- Arduino Uno/Nano
-- Water Level Sensor
-- SG90 Servo Motor
-- Active Buzzer
-- Jumper Wires
-- USB Cable
+| Component | Quantity | Purpose |
+|-----------|:--------:|---------|
+| Arduino Uno (or Nano) | 1 | Main microcontroller |
+| Water Level Sensor Module | 1 | Detects rain/water |
+| SG90 Micro Servo Motor | 1 | Rotates 90° when rain is detected |
+| Active Buzzer (5V) | 1 | Provides an audible alert |
+| Jumper Wires | 1 Set | Electrical connections |
+| Breadboard (Optional) | 1 | Prototyping the circuit |
+| USB Cable | 1 | Programming and powering the Arduino |
+| 5V Power Supply (Optional) | 1 | Recommended for powering the servo separately |
 
 ## Wiring
 
