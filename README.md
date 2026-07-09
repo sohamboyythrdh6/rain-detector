@@ -9,11 +9,11 @@ i have a simple project which detects rain and trigger a buzzer and at the same 
 
 > Built in [Breadboard](https://breadboard.hackclub.com), a Hack Club program. This project took ~1 hours of work.
 
-# 🌧️ Arduino Rain Detector
+#  Arduino Rain Detector
 
 A simple Arduino-based rain detection system that uses a water level sensor to detect raindrops. When rain is detected, the Arduino activates a buzzer to provide an audible alert and rotates a servo motor to 90°, making it suitable for applications such as automatic rain covers, window closers, and weather monitoring.
 
-## ✨ Features
+##  Features
 
 - Detects rain using a water level sensor
 - Sounds an active buzzer when rain is detected
@@ -24,7 +24,7 @@ A simple Arduino-based rain detection system that uses a water level sensor to d
 
 ---
 
-## ⚙️ How It Works
+##  How It Works
 
 1. The Arduino continuously reads the analog value from the water level sensor.
 2. When raindrops fall on the sensor, its output value increases.
@@ -40,23 +40,23 @@ A simple Arduino-based rain detection system that uses a water level sensor to d
 This simple control logic allows the system to automatically respond whenever rain is detected.
 ```
 
-## 📖 What It Does
+##  What It Does
 
 This project continuously monitors a water level sensor for the presence of water or raindrops. The Arduino reads the sensor value and compares it against a predefined threshold.
 
 When rain is detected:
-- 🔔 The buzzer turns on to alert the user.
-- 🔄 The servo motor rotates to **90°**.
+-  The buzzer turns on to alert the user.
+-  The servo motor rotates to **90°**.
 
 When the sensor is dry:
-- 🔕 The buzzer turns off.
-- 🔄 The servo returns to **0°**.
+-  The buzzer turns off.
+-  The servo returns to **0°**.
 
 The firmware also prints sensor readings to the Serial Monitor, allowing the detection threshold to be adjusted for different environments.
 
 ---
 
-## 🎯 Why I Built This
+##  Why I Built This
 
 I built this project to learn how Arduino interfaces with sensors and actuators. It demonstrates analog sensor reading, decision-making in software, and controlling output devices such as servos and buzzers.
 
@@ -64,7 +64,7 @@ This project can also serve as the foundation for larger automation systems, inc
 
 ---
 
-## 🛠 Components
+##  Bill of Materials
 
 | Component | Quantity |
 |-----------|:--------:|
@@ -78,7 +78,7 @@ This project can also serve as the foundation for larger automation systems, inc
 
 ---
 
-## 🔌 Wiring
+##  Wiring
 
 ### Water Level Sensor
 
@@ -105,7 +105,7 @@ This project can also serve as the foundation for larger automation systems, inc
 
 ---
 
-## 🚀 How to Use
+##  How to Use
 
 1. Assemble the circuit.
 2. Connect the Arduino to your computer.
@@ -125,7 +125,7 @@ When the sensor dries:
 
 ---
 
-## 💻 Firmware
+##  Firmware
 
 The firmware is written in Arduino (C++).
 
@@ -141,7 +141,7 @@ Library used:
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```
 Rain-Detector/
@@ -159,7 +159,7 @@ Rain-Detector/
 
 ---
 
-## 📷 Images
+##  Images
 
 Add:
 - Project photos
@@ -169,7 +169,7 @@ Add:
 
 ---
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 - OLED display
 - LCD status screen
@@ -180,7 +180,7 @@ Add:
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the MIT License.
 
