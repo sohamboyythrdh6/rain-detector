@@ -2,193 +2,112 @@
 
 
 
-
-
-i have a simple project which detects rain and trigger a buzzer and at the same time a servo motor rotate 90 degree and save your cloths
+![rain detector](screenshot.jpg)
 
 
 > Built in [Breadboard](https://breadboard.hackclub.com), a Hack Club program. This project took ~1 hours of work.
 
-#  Arduino Rain Detector
 
-A simple Arduino-based rain detection system that uses a water level sensor to detect raindrops. When rain is detected, the Arduino activates a buzzer to provide an audible alert and rotates a servo motor to 90°, making it suitable for applications such as automatic rain covers, window closers, and weather monitoring.
 
-##  Features
+## What It Does
 
-- Detects rain using a water level sensor
-- Sounds an active buzzer when rain is detected
-- Rotates an SG90 servo motor to 90°
-- Returns the servo to 0° when the sensor is dry
-- Displays sensor readings on the Serial Monitor
-- Simple, beginner-friendly Arduino project
+i have a simple project which detects rain and trigger a buzzer and at the same time a servo motor rotate 90 degree and save your cloths
+'What It Does'
 
----
+This project continuously monitors a water level sensor to detect raindrops. When rain is detected, the Arduino immediately triggers an active buzzer to provide an audible alert and rotates a servo motor to 90°. Once the sensor is dry again, the buzzer turns off and the servo returns to its original 0° position.
 
-##  How It Works
+This project demonstrates basic sensor monitoring, servo motor control, and event-based automation using an Arduino.
 
-1. The Arduino continuously reads the analog value from the water level sensor.
-2. When raindrops fall on the sensor, its output value increases.
-3. The Arduino compares the sensor reading to a predefined threshold.
-4. If the reading exceeds the threshold:
-   - The Arduino activates the active buzzer to sound an alarm.
-   - The SG90 servo motor rotates from **0°** to **90°**.
-5. If the reading falls below the threshold (the sensor is dry):
-   - The buzzer turns off.
-   - The servo returns to **0°**.
-6. The current sensor value is also sent to the **Serial Monitor** for debugging and sensitivity adjustment.
+## How to Use It
 
-This simple control logic allows the system to automatically respond whenever rain is detected.
-```
-
-##  What It Does
-
-This project continuously monitors a water level sensor for the presence of water or raindrops. The Arduino reads the sensor value and compares it against a predefined threshold.
-
-When rain is detected:
--  The buzzer turns on to alert the user.
--  The servo motor rotates to **90°**.
-
-When the sensor is dry:
--  The buzzer turns off.
--  The servo returns to **0°**.
-
-The firmware also prints sensor readings to the Serial Monitor, allowing the detection threshold to be adjusted for different environments.
-
----
-
-##  Why I Built This
-
-I built this project to learn how Arduino interfaces with sensors and actuators. It demonstrates analog sensor reading, decision-making in software, and controlling output devices such as servos and buzzers.
-
-This project can also serve as the foundation for larger automation systems, including automatic window closers, retractable covers, and weather monitoring devices.
-
----
-
-##  Bill of Materials
-
-| Component | Quantity |
-|-----------|:--------:|
-| Arduino Uno/Nano | 1 |
-| Water Level Sensor | 1 |
-| SG90 Servo Motor | 1 |
-| Active Buzzer | 1 |
-| Jumper Wires | Several |
-| Breadboard (Optional) | 1 |
-| USB Cable | 1 |
-
----
-
-##  Wiring
-
-### Water Level Sensor
-
-| Sensor | Arduino |
-|---------|----------|
-| VCC | 5V |
-| GND | GND |
-| AO | A0 |
-
-### Servo
-
-| Servo | Arduino |
-|--------|----------|
-| Signal | D9 |
-| VCC | 5V |
-| GND | GND |
-
-### Buzzer
-
-| Buzzer | Arduino |
-|---------|----------|
-| + | D8 |
-| - | GND |
-
----
-
-##  How to Use
-
-1. Assemble the circuit.
-2. Connect the Arduino to your computer.
-3. Open the Arduino sketch in the Arduino IDE.
-4. Select your board and COM port.
-5. Upload the firmware.
-6. Place the water level sensor where it can detect rain.
+1. Assemble the circuit according to the wiring diagram.
+2. Connect the Arduino to your computer using a USB cable.
+3. Open the project in the Arduino IDE.
+4. Select the correct **Board** and **COM Port**.
+5. Upload the code to the Arduino.
+6. Place the water level sensor where it can detect raindrops.
 7. Power the Arduino.
+8. When rain falls on the sensor:
+   - The buzzer will sound.
+   - The servo motor will rotate to **90°**.
+9. Once the sensor dries:
+   - The buzzer will stop.
+   - The servo will return to **0°**.
+10. If needed, adjust the sensor threshold in the code to change the detection sensitivity.
 
-When rain falls on the sensor:
-- The buzzer sounds.
-- The servo rotates to 90°.
+## Bill of Materials 
 
-When the sensor dries:
-- The buzzer stops.
-- The servo returns to 0°.
+| Component | Quantity | Purpose |
+|-----------|:--------:|---------|
+| Arduino Uno (or Nano) | 1 | Main microcontroller |
+| Water Level Sensor Module | 1 | Detects rain/water |
+| SG90 Micro Servo Motor | 1 | Rotates 90° when rain is detected |
+| Active Buzzer (5V) | 1 | Provides an audible alert |
+| Jumper Wires | 1 Set | Electrical connections |
+| Breadboard (Optional) | 1 | Prototyping the circuit |
+| USB Cable | 1 | Programming and powering the Arduino |
+| 5V Power Supply (Optional) | 1 | Recommended for powering the servo separately |
 
----
 
-##  Firmware
+## How It Works
 
-The firmware is written in Arduino (C++).
+The circuit is captured in `breadboard-project.json`, and the firmware that runs it is in the `firmware/` folder.
 
-Functions:
-- Reads the water level sensor continuously.
-- Detects rain using a configurable threshold.
-- Controls the buzzer.
-- Controls the servo motor.
-- Sends sensor values to the Serial Monitor.
 
-Library used:
-- Servo.h
+## How To Use It
 
----
+i notice many time our dry cloths are wet dew to sudden rainfall so i make this prototype in which i use three module ardunouno,servo SG90,water level detector and a passive buzzer connect water
+Water Level Sensor
+------------------
+VCC  -----------> 5V
+GND  -----------> GND
+S    -----------> A0
 
-##  Repository Structure
+Servo (SG90)
+------------
+Red    -------> 5V
+Brown  -------> GND
+Orange -------> D9
 
-```
-Rain-Detector/
-│
-├── firmware/
-│   └── rain_detector.ino
-│
-├── images/
-│   ├── wiring_diagram.png
-│   └── project_photo.jpg
-│
-├── README.md
-└── LICENSE
-```
-
----
-
-##  Images
-
-Add:
-- Project photos
-- Wiring diagram
-- Breadboard layout
-- Demonstration GIF (optional)
-
----
-
-##  Future Improvements
-
-- OLED display
-- LCD status screen
-- IoT notifications
-- Automatic rain cover
-- Battery-powered operation
-- Adjustable sensitivity using a potentiometer
-
----
-
-## License
-
-This project is licensed under the MIT License.
-
+Active Buzzer
+-------------
++  -----------> D8
+-  -----------> GND
+and you are ready to use it
 
 
 ## Demo
 
-- **Try it:** [https://breadboard.hackclub.com/share/80](https://breadboard.hackclub.com/share/80)
+- **Simulate it live:** [https://breadboard.hackclub.com/share/80](https://breadboard.hackclub.com/share/80), runs the firmware in the Breadboard simulator
+- **View the design:** [https://taniwankenobi.github.io/breadboard-plays/p/80/](https://taniwankenobi.github.io/breadboard-plays/p/80/)
+
+
+## Schematic
+
+The editor snapshot is in `breadboard-project.json`.
+
+
+## Bill of Materials
+
+| Part | Quantity |
+| --- | --- |
+| buzzer-passive | 1 |
+| servo | 1 |
+| water-level-sensor | 1 |
+
+
+## Firmware
+
+Firmware files are in the `firmware/` folder.
+
+
+## Build Journal
+
+Build journal entries are kept in [`journals.md`](journals.md).
+
+
+---
+
 
 
 *Made in [Breadboard](https://breadboard.hackclub.com) — 1h of work*
