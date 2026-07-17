@@ -49,9 +49,19 @@ This project demonstrates basic sensor monitoring, servo motor control, and even
 | 5V Power Supply (Optional) | 1 | Recommended for powering the servo separately |
 
 
-## How It Works
+## ⚙️ How It Works
 
-The circuit is captured in `breadboard-project.json`, and the firmware that runs it is in the `firmware/` folder.
+The system continuously monitors a water level sensor for raindrops. When rain is detected, the Arduino compares the sensor reading against a predefined threshold.
+
+If the threshold is exceeded:
+- The active buzzer sounds to immediately alert the user that rain has been detected.
+- The SG90 servo motor rotates **90°** to simulate closing or opening a mechanical device, such as a rain cover, window, vent, or protective lid. This demonstrates how the project can automatically protect equipment from rain without requiring human intervention.
+
+When the sensor becomes dry:
+- The buzzer turns off.
+- The servo returns to **0°**, returning the mechanism to its original position.
+
+By combining a sensor, actuator, and alert system, the project demonstrates a basic automated control system that responds to environmental conditions in real time.
 
 
 ## How To Use It
